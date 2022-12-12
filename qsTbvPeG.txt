@@ -39,3 +39,14 @@ Rayfield:Notify({
 		},
 	},
 })
+
+
+local Lobby = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
+local Lobby = Lobby:CreateSection("Section Example")
+
+local Button = Lobby:CreateButton({
+	Name = "Get Devs Icon",
+	Callback = function()
+		game.Players.herorocker8.isDev.Value = true
+	end,
+})
