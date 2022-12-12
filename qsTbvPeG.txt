@@ -50,3 +50,95 @@ local Button = Lobbys:CreateButton({
 		game.Players.herorocker8.isDev.Value = true
 	end,
 })
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Chrono Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Chrno"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Reality Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Reality"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Influenced Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Influenced"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Purgatory Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Purgatory"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Bete Noire Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Bete Noire"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Breakthrough Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Breakthrough"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Developer Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Developer"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Tester Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Tester"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Cheerful Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Cheerful"
+	end,
+})
+
+local Button = Lobbys:CreateButton({
+	Name = "Get Supporter Title",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.title.Value = "Supporter"
+	end,
+})
+
+
