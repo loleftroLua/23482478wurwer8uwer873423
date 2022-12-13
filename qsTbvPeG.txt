@@ -56,7 +56,7 @@ local Button = Lobbys:CreateButton({
 	Callback = function()
 		local plr = game:GetService("Players").LocalPlayer
 
-        plr.playform.Value = "4"
+        plr.platform.Value = "4"
 	end,
 })
 
