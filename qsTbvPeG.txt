@@ -142,3 +142,68 @@ local Button = Lobbys:CreateButton({
 })
 
 
+local publicServers = Window:CreateTab("Servers", 9692125126) -- Title, Image
+local publicServers = publicServers:CreateSection("Servers")
+
+
+--#region Special Servers
+publicServers:CreateSection("Server Identifier")
+publicServers:CreateLabel("Current Server Identification: "..game.JobId)
+publicServers:CreateButton({
+    Name="Copy Server Identification",
+    Callback=function()
+        (syn and syn.write_clipboard or setclipboard)(game.JobId)
+    end
+})
+publicServers:CreateSection("Features")
+publicServers:CreateButton({
+    Name="Join Empty Special Server",
+    Callback=function()
+        game.Players.LocalPlayer:Kick("\nJoining Special Server... Please Wait")
+		wait()
+        queue_on_teleport("loadstring(game:HttpGet\"https://raw.githubusercontent.com/sponguss/Doors-Entity-Replicator/main/source.lua\")()")
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+    end
+})
+publicServers:CreateButton({
+    Name="Free Revive",
+    Callback=function()
+        queue_on_teleport("loadstring(game:HttpGet\"https://raw.githubusercontent.com/sponguss/Doors-Entity-Replicator/main/source.lua\")()")
+		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+    end
+})
+publicServers:CreateLabel("WARNING: FREE REVIVING REQUIRES TO BE IN A SPECIAL SERVER WITH COMPANY")
+publicServers:CreateSection("Server-Hopping")
+publicServers:CreateButton({
+    Name="Join Random Special Server",
+	Callback = function()
+        local tb=game:GetService("HttpService"):JSONDecode(game:HttpGet(("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100"):format(tostring(game.PlaceId))))
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, tb.data[math.random(1,#tb.data)].id, game.Players.LocalPlayer)
+        queue_on_teleport("loadstring(game:HttpGet\"https://raw.githubusercontent.com/sponguss/Doors-Entity-Replicator/main/source.lua\")()")
+    end,
+})
+publicServers:CreateInput({
+    Name="Join Specific Player",
+    PlaceholderText = game.Players.LocalPlayer.Name,
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+        local tb=game:GetService("HttpService"):JSONDecode(game:HttpGet(("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100"):format(tostring(game.PlaceId))))
+        for _, server in pairs(tb.data) do
+            for _, player in pairs(server.players) do
+                if player.name==Text or player.UserId==Text then
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, server.id, game.Players.LocalPlayer)
+                    queue_on_teleport("loadstring(game:HttpGet\"https://raw.githubusercontent.com/sponguss/Doors-Entity-Replicator/main/source.lua\")()")
+                end
+            end
+        end
+    end,
+})
+publicServers:CreateInput({
+    Name="Join Special Server",
+    PlaceholderText = "Insert Server Identification",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, Text, game.Players.LocalPlayer)
+        queue_on_teleport("loadstring(game:HttpGet\"https://raw.githubusercontent.com/sponguss/Doors-Entity-Replicator/main/source.lua\")()")
+    end,
+})
