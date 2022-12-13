@@ -147,8 +147,6 @@ local publicServers = publicServers:CreateSection("Servers")
 
 
 --#region Special Servers
-publicServers:CreateSection("Server Identifier")
-publicServers:CreateLabel("Current Server Identification: "..game.JobId)
 publicServers:CreateButton({
     Name="Copy Server Identification",
     Callback=function()
