@@ -51,10 +51,19 @@ local Button = Lobbys:CreateButton({
 	end,
 })
 
+local Button = Lobbys:CreateButton({
+	Name = "4 platform",
+	Callback = function()
+		local plr = game:GetService("Players").LocalPlayer
+
+        plr.playform.Value = "4"
+	end,
+})
+
 
 
 local Titles = Window:CreateTab("Titles", 9692125126) -- Title, Image
-local Titles = Titles:CreateSection("Titles")
+local Title = Titles:CreateSection("Titles")
 
 local Button = Titles:CreateButton({
 	Name = "Get Chrono Title",
